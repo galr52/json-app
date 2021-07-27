@@ -25,8 +25,16 @@ function App() {
     },
   };
   return (
-    <div className="App">
-      <ReactJson src={my_json_object} />
+    <div class="flex flex-col h-screen">
+      <header class="py-5 bg-gray-700 text-white text-center">
+        Json App 😎
+      </header>
+      <main class="flex-1 overflow-y-auto p-5">
+        <ReactJson src={my_json_object} />
+      </main>
+      <footer class="py-5 bg-gray-700 text-center text-white">
+        &copy; Copyright 2021
+      </footer>
     </div>
   );
 }
