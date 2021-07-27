@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import ReactJson from "react-extreme-json-view";
+import "./App.css";
 
 function App() {
+  const my_json_object = {
+    glossary: {
+      title: "example glossary",
+      GlossDiv: {
+        title: "S",
+        GlossList: {
+          GlossEntry: {
+            ID: "SGML",
+            SortAs: "SGML",
+            GlossTerm: "Standard Generalized Markup Language",
+            Acronym: "SGML",
+            Abbrev: "ISO 8879:1986",
+            GlossDef: {
+              para: "A meta-markup language, used to create markup languages such as DocBook.",
+              GlossSeeAlso: ["GML", "XML"],
+            },
+            GlossSee: "markup",
+          },
+        },
+      },
+    },
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ReactJson src={my_json_object} />
     </div>
   );
 }
